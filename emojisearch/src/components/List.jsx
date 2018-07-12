@@ -4,18 +4,18 @@ import emojis from "../data/emojis.json";
 
 function List(props) {
   return (
-    <main>
+    <ul>
       {emojis.reduce((result, emoji) => {
         if (emoji.title.toLowerCase().includes(props.itemsToDisplay.toLowerCase())) {
           result.push(
-            <span class="emoji" alt={emoji.title}>
-              {emoji.symbol}
-            </span>
+            <li class="emoji" alt={emoji.title}>
+              {emoji.symbol} - {emoji.title}
+            </li>
           );
         }
         return result;
       }, [])}
-    </main>
+    </ul>
   );
 }
 
